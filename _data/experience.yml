@@ -1,0 +1,46 @@
+# items: each entry becomes one card on the Experience page, newest first.
+# tag: research OR industry OR project
+# in_progress: true adds an "in-progress" tag
+# blog_slug: the folder/filename (without date) of a post in _posts, once written.
+#            Leave blank ("") for entries that don't get a post yet.
+
+items:
+  - title: Engineering Intern - Akdoğan
+    date: Aug 2026 · Cyberpark, Ankara
+    tag: industry
+    in_progress: true
+    body: Working on embedded systems for a marine vehicle platform, alongside ROS 2 integration.
+    blog_slug: ""
+
+  - title: Research Intern - SINTEF Digital
+    date: Jun 2026 - Present · Remote, Norway
+    tag: research
+    in_progress: true
+    body: Designing controlled comparisons of LLM architectures for automated code review under Dr. Arda Göknil, and testing whether the confidence signals these systems report can be trusted.
+    blog_slug: ""
+
+  - title: Undergraduate Researcher - Bilkent Dept. of Computer Engineering
+    date: Jan 2026 - Present
+    tag: research
+    in_progress: true
+    body: Preparing a workshop paper as the sole student on a systematic literature survey of computer vision in software engineering, extending Bajammal et al. (IEEE TSE 2022).
+    blog_slug: ""
+
+  - title: Autonomous Surface Vehicle - Teknofest 2026 USV Competition
+    date: Jan - Jun 2026
+    tag: project
+    in_progress: false
+    body: Captained a 5-person team from computer, electrical-electronics, and mechanical engineering for Turkey's national autonomous marine vehicle competition. Specified the vision and control software architecture, covering buoy detection and a mission state machine across a ROS 2 node structure, and authored the software sections of the technical reports. The team cleared the first qualification stage and was eliminated at the design report stage.
+    blog_slug: ""
+
+  - title: 2D Parkour Game - CS102 Course Project
+    date: Feb - Jun 2025
+    tag: project
+    in_progress: false
+    body: Built a light-reflection puzzle module with real-time ray tracing across three mirror types in a LibGDX grid environment. Led report writing and team coordination.
+    blog_slug: ""
+
+extras:
+  - Culture & Arts Editor, Gazete Bilkent
+  - Author & Editor, Mercek Magazine, IEEE Bilkent
+  - Board Member, Bilkent University Formula 1 Society

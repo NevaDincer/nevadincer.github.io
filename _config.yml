@@ -1,0 +1,25 @@
+title: Neva Dinçer
+description: Computer vision, autonomous systems, and LLM security.
+url: "https://nevadincer.github.io"
+
+markdown: kramdown
+permalink: /:categories/:title/
+
+collections:
+  experience:
+    output: false
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
