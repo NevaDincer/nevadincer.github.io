@@ -1,0 +1,46 @@
+# items: each entry becomes one card on the Experience page, newest first.
+# tag: research OR industry OR project
+# in_progress: true adds an "in-progress" tag
+# blog_slug: the folder/filename (without date) of a post in _posts, once written.
+#            Leave blank ("") for entries that don't get a post yet.
+
+items:
+  - title: Engineering Intern - Akdoğan Tech
+    date: Aug - Sep 2026 · Cyberpark, Ankara
+    tag: industry
+    in_progress: false
+    body: Akdoğan Tech is a defense and unmanned systems company in Ankara. Over four weeks I built a Webots simulation of an unmanned surface vehicle and connected it to ArduPilot's autopilot software through MAVLink, working through manual control, obstacle detection and sensor integration, then connecting the simulation to QGroundControl and building a ROS 2 telemetry bridge with a live dashboard. Partway through I dropped the obstacle-avoidance script I had written myself and moved to ArduPilot's own avoidance system, since the vehicle had to be drivable from any standard ground control software and my version would have been invisible to it.
+    blog_slug: "ardupilot-mavlink-qgroundcontrol-ros2"
+
+  - title: Research Intern - SINTEF Digital
+    date: Jun 2026 - Sep 2026 · Remote, Norway
+    tag: research
+    in_progress: false
+    body: Compared single-agent, two-agent and four-agent setups for automated code review under Dr. Arda Göknil, across three levels of automatic prompt optimization, and replicated VulTrial (ICSE 2026) with different models substituted in.
+    blog_slug: ""
+
+  - title: Undergraduate Researcher - Bilkent Dept. of Computer Engineering
+    date: Jan 2026 - Present
+    tag: research
+    in_progress: true
+    body: Systematic literature survey of computer vision in software engineering as the sole student on the project, extending Bajammal et al. (IEEE TSE 2022). Read and classified all 199 papers the search returned.
+    blog_slug: ""
+
+  - title: Autonomous Surface Vehicle - Teknofest 2026 USV Competition
+    date: Jan - Jun 2026
+    tag: project
+    in_progress: false
+    body: Formed and captained a 5-person team from computer, electrical-electronics, and mechanical engineering for Turkey's national autonomous marine vehicle competition. Specified the vision and control software architecture, covering buoy detection and a mission state machine across a ROS 2 node structure, and authored the software sections of the technical reports. The team cleared the first qualification stage and was eliminated at the design report stage.
+    blog_slug: ""
+
+  - title: 2D Parkour Game - CS102 Course Project
+    date: Feb - Jun 2025
+    tag: project
+    in_progress: false
+    body: Built a light-reflection puzzle module with real-time ray tracing across three mirror types in a LibGDX grid environment. Led report writing and team coordination.
+    blog_slug: ""
+
+extras:
+  - Culture & Arts Editor, Gazete Bilkent
+  - Author & Editor, Mercek Magazine, IEEE Bilkent
+  - Board Member, Bilkent Artificial Intelligence Society

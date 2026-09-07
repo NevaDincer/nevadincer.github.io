@@ -1,0 +1,25 @@
+title: Neva Dinçer
+description: Computer Engineering student at Bilkent University, working on computer vision and the evaluation of LLM-based systems.
+url: "https://nevadincer.github.io"
+
+markdown: kramdown
+permalink: /:categories/:title/
+
+collections:
+  experience:
+    output: false
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
