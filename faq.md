@@ -33,9 +33,9 @@ permalink: /faq/
 </div>
 
 <div class="entry">
-  <p class="entry-title">What are the tools you can use?</p>
+  <p class="entry-title">What do you work with?</p>
   <ul class="extra-list">
-    <li><strong>Languages:</strong> C++, Python, Java, MIPS Assembly, SystemVerilog</li>
-    <li><strong>Tools:</strong> OpenCV, ROS 2, LibGDX, Git, Docker, Proteus Design Suite</li>
+    <li><strong>Programming:</strong> Python, Java, C++</li>
+    <li><strong>Tools & frameworks:</strong> Git, Docker, ROS 2, Webots, ArduPilot, MAVLink, QGroundControl, DSPy, OpenCV</li>
   </ul>
 </div>
