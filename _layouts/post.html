@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{% assign words = content | strip_html | number_of_words %}
+{% assign minutes = words | divided_by: 230 | round | at_least: 1 %}
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time> · {{ minutes }} min read
+    </p>
+  </header>
+
+  {% unless page.toc == false %}
+  <details class="toc" hidden>
+    <summary>Contents</summary>
+    <nav class="toc-list" aria-label="Contents"></nav>
+  </details>
+  {% endunless %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <p class="back"><a href="{{ '/writing/' | relative_url }}">&larr; All writing</a></p>
+</article>

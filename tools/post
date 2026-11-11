@@ -1,0 +1,47 @@
+#!/bin/sh
+# Blog helper.
+#   tools/post new "Post title"      new draft in _drafts/
+#   tools/post new "Post title" -p   new post in _posts/ (dated today)
+#   tools/post publish short-name    move a draft to _posts/ with today's date
+set -e
+cd "$(dirname "$0")/.."
+
+slugify() {
+  printf '%s' "$1" \
+    | sed 's/ç/c/g;s/Ç/c/g;s/ğ/g/g;s/Ğ/g/g;s/ı/i/g;s/İ/i/g;s/ö/o/g;s/Ö/o/g;s/ş/s/g;s/Ş/s/g;s/ü/u/g;s/Ü/u/g' \
+    | sed "s/['’]//g" \
+    | tr '[:upper:]' '[:lower:]' \
+    | sed 's/[^a-z0-9]/-/g;s/--*/-/g;s/^-//;s/-$//'
+}
+
+case "$1" in
+  new)
+    [ -n "$2" ] || { echo 'usage: tools/post new "Post title" [-p]'; exit 1; }
+    title="$2"; slug=$(slugify "$title")
+    if [ "$3" = "-p" ]; then file="_posts/$(date +%F)-$slug.md"; else file="_drafts/$slug.md"; fi
+    [ -e "$file" ] && { echo "$file already exists"; exit 1; }
+    mkdir -p "assets/img/writing/$slug"
+    cat > "$file" <<POST
+---
+title: "$title"
+description: ""
+# math: true
+# Images go in assets/img/writing/$slug/
+# ![What the image shows](/assets/img/writing/$slug/name.png)
+---
+
+POST
+    echo "created $file"
+    echo "images  assets/img/writing/$slug/"
+    ;;
+  publish)
+    [ -n "$2" ] || { echo 'usage: tools/post publish short-name'; ls _drafts 2>/dev/null; exit 1; }
+    slug="${2%.md}"; src="_drafts/$slug.md"; dst="_posts/$(date +%F)-$slug.md"
+    [ -e "$src" ] || { echo "no draft $src"; ls _drafts; exit 1; }
+    mv "$src" "$dst"
+    echo "published $dst -> /writing/$slug/"
+    ;;
+  *)
+    sed -n '2,5p' "$0" | sed 's/^# \{0,1\}//'
+    ;;
+esac

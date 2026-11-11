@@ -1,0 +1,24 @@
+---
+layout: default
+title: Writing
+redirect_from:
+  - /blog/
+---
+
+<h1 class="page-title">Writing</h1>
+
+{% if site.posts.size == 0 %}
+<p class="muted">Nothing here yet.</p>
+{% else %}
+<ul class="rows">
+  {% for post in site.posts %}
+  <li class="row">
+    <div>
+      <p class="row-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
+      {% if post.description %}<p class="row-text muted">{{ post.description }}</p>{% endif %}
+    </div>
+    <span class="meta">{{ post.date | date: "%b %Y" }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

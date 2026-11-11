@@ -1,0 +1,55 @@
+title: Neva Dinçer
+author: Neva Dinçer
+description: Computer Engineering student at Bilkent University.
+url: "https://nevadincer.github.io"
+baseurl: ""
+lang: en
+
+# Social preview card (used when the site is shared on LinkedIn, WhatsApp, etc.)
+image: /assets/img/og.png
+social:
+  name: Neva Dinçer
+  links:
+    - https://github.com/NevaDincer
+    - https://linkedin.com/in/nevadincer
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  math_engine: mathjax
+
+permalink: /:title/
+
+collections:
+  posts:
+    output: true
+    permalink: /writing/:title/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og.png
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+feed:
+  path: feed.xml
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - tools

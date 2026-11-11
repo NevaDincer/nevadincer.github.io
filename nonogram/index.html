@@ -1,0 +1,47 @@
+---
+layout: default
+title: Nonogram
+scripts:
+  - /assets/js/nonogram.js
+---
+
+<h1 class="page-title">Nonogram</h1>
+<p class="ng-note">{% include rose.svg class="note-flower" %}<span>I've played nonograms since middle school. I picked them up from watching my mom, and I still play almost every day, so I wanted one on my site.{% assign np = site.posts | where_exp: "p", "p.url contains 'making-a-daily-nonogram'" | first %}{% if np %} <a href="{{ np.url | relative_url }}">How I made it</a>{% endif %}</span></p>
+
+<div id="nonogram" class="nonogram window">
+  <div class="window-bar">
+    <span class="window-title">{% include grid-icon.svg %}<span>Nonogram, <span class="ng-date"></span></span></span>
+    <button type="button" class="window-btn ng-help-open" aria-label="How to play" title="How to play">?</button>
+  </div>
+  <div class="window-body">
+    <p class="ng-tools">
+      <button type="button" class="ng-mode" data-mode="1" aria-pressed="true">Fill</button>
+      <button type="button" class="ng-mode" data-mode="2" aria-pressed="false">Cross</button>
+      <button type="button" class="ng-reset">Clear</button>
+    </p>
+    <div class="ng-stage"><div class="ng-board"></div></div>
+    {% include rose.svg class="ng-flower" draw=true %}
+    <p class="ng-status" role="status"></p>
+    <noscript><p>The puzzle needs JavaScript.</p></noscript>
+  </div>
+</div>
+
+<dialog class="help" id="ng-help" aria-labelledby="ng-help-title">
+  <div class="window-bar">
+    <span class="window-title" id="ng-help-title">How to play</span>
+    <button type="button" class="window-btn ng-help-close" aria-label="Close">&times;</button>
+  </div>
+  <div class="window-body">
+    <ol>
+      <li>The numbers next to a row (or above a column) are the lengths of the filled blocks in it, in order.</li>
+      <li>Between two blocks there is at least one empty square.</li>
+      <li>Fill the squares you're sure about, cross out the ones you know are empty, and keep going until every number fits.</li>
+    </ol>
+    <div class="help-example" aria-hidden="true">
+      <span class="ng-clue">3 2</span>
+      <span class="help-row"><span></span><span class="f"></span><span class="f"></span><span class="f"></span><span></span><span></span><span class="f"></span><span class="f"></span></span>
+    </div>
+    <p class="help-caption">One way to fill a row with the clue 3 2.</p>
+    <p class="help-caption">Tap or drag to fill. Right click, or switch to Cross, to mark empty squares.</p>
+  </div>
+</dialog>

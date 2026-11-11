@@ -1,0 +1,47 @@
+---
+layout: default
+title: ""
+body_class: home
+redirect_from:
+  - /research/
+  - /experience/
+  - /faq/
+  - /reading/
+---
+
+<div class="home-grid">
+<aside class="profile">
+  <img class="portrait" src="{{ '/assets/img/portrait.jpg' | relative_url }}" alt="Neva by the sea, in a white hooded jacket" width="480" height="480">
+  <h1 class="profile-name">Neva Dinçer</h1>
+  <p class="profile-line">I study Computer Engineering at Bilkent University.</p>
+  <ul class="profile-links">
+    <li><a href="{{ '/assets/Neva_Dincer_CV.pdf' | relative_url }}">CV</a></li>
+    <li><a href="mailto:nevadincer@gmail.com">Email</a></li>
+    <li><a href="https://github.com/NevaDincer" rel="noopener">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/nevadincer" rel="noopener">LinkedIn</a></li>
+  </ul>
+</aside>
+
+<div class="home-main">
+<p class="intro-more">I like problems where a person and a machine see the same thing differently. A maze looks obvious to the eye, but a machine needs it in a completely different form before it can solve it. The part I enjoy is changing how I look at the problem until it matches how the machine sees it.</p>
+<p class="intro-more">I'm still figuring out my research direction. Right now I'm drawn to interpretability, AI safety, and uncertainty estimation.</p>
+
+<section aria-labelledby="experience-title">
+  <h2 class="label" id="experience-title">Experience</h2>
+  <ul class="rows">
+    {% for item in site.data.experience.items %}
+    <li class="row exp">
+      <div>
+        <p class="row-title">{{ item.title }} · {{ item.org }}</p>
+        <p class="row-text">{{ item.text }}{% if item.post %} <a href="{{ '/writing/' | append: item.post | append: '/' | relative_url }}">Read the post</a>{% endif %}</p>
+      </div>
+      <span class="meta">{{ item.date }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="also">Also:
+    {% for a in site.data.experience.also %}{% if a.url != "" %}<a href="{{ a.url }}" rel="noopener">{{ a.text }}</a>{% else %}{{ a.text }}{% endif %}{% unless forloop.last %} · {% endunless %}{% endfor %}
+  </p>
+</section>
+</div>
+</div>

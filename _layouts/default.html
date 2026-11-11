@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+{% include head.html %}
+</head>
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrapper">
+    {% include nav.html %}
+    <main id="main">
+      {{ content }}
+    </main>
+    <footer class="site-footer">
+      &copy; {{ 'now' | date: "%Y" }} Neva Dinçer · <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </footer>
+  </div>
+  {% if page.scripts %}{% for s in page.scripts %}<script defer src="{{ s | relative_url }}?v={{ site.time | date: '%s' }}"></script>{% endfor %}{% endif %}
+</body>
+</html>

@@ -1,0 +1,45 @@
+# Experience rows on the home page, newest first.
+#   title, org, date:  shown on the first line
+#   text:              one short line under it
+#   post:              optional. The post's file name without the date
+#                      (e.g. "a-map-of-DSPy") adds a link to it.
+
+items:
+  - title: LLM Research Group
+    org: Digital Brain Technologies
+    date: Since Aug 2026
+    text: Each week I review a new language model or agent paper and present how it could fit the company's agent platform. I also write reports on model hosting, inference cost and agent reliability.
+
+  - title: Research Intern
+    org: SINTEF Digital
+    date: Jun to Sep 2026
+    text: Compared three multi-agent architectures under three levels of automatic prompt optimization, and replicated VulTrial (ICSE 2026) with different models. Supervised by Dr. Arda Göknil.
+
+  - title: Engineering Intern
+    org: Akdoğan Tech
+    date: Aug to Sep 2026
+    text: Made a Webots and ArduPilot simulation of an unmanned surface vehicle and connected it to QGroundControl and ROS 2 over MAVLink.
+
+  - title: Undergraduate Researcher
+    org: Bilkent Computer Engineering
+    date: Since Jan 2026
+    text: Screened the candidate papers and wrote the full draft of a systematic literature survey on computer vision in software engineering, with Asst. Prof. Anıl Koyuncu.
+
+  - title: Team Captain, Autonomous Surface Vehicle
+    org: Teknofest 2026
+    date: Jan to Jun 2026
+    text: Formed a five-person team from three engineering departments and wrote the software sections of the design reports, covering buoy detection and the ROS 2 architecture.
+
+  - title: 2D Parkour Game
+    org: CS102 course project
+    date: Feb to Jun 2025
+    text: Built the light-reflection puzzle module, with real-time ray tracing on a LibGDX grid.
+
+# One-line roles shown under the list. A url is optional.
+also:
+  - text: Culture and Arts Editor, Gazete Bilkent
+    url: ""
+  - text: Board Member, Bilkent Artificial Intelligence Society
+    url: ""
+  - text: Author and Editor, IEEE Student Branch, Mercek Magazine (2025 to 2026)
+    url: ""
